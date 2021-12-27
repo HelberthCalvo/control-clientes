@@ -10,7 +10,7 @@ import { TableroComponent } from './componentes/tablero/tablero.component';
 const routes: Routes = [
   {path: '', component: TableroComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'registrar', component: RegistroComponent},
+  {path: 'registrarse', component: RegistroComponent},
   {path: 'configuracion', component: ConfiguracionComponent},
   {path: 'cliente/editar/:id', component: EditarClienteComponent},
   {path: '**', component: NoEncontradoComponent},

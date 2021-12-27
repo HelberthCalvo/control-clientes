@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
         <a routerLink="/" class="navbar-brand">Control Clientes</a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
@@ -12,15 +12,16 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown mr-3"></li>
-            <a href="#" class="nav-link dropdown-toggle" data-togle="dropdown">
-                <i class="fas fa-user"> </i>
-            </a>
-            <div class="dropdown-menu">
-                <a routerLink="/configuracion" class="dropdown-item">
-                    <i class="fas fa-cog"></i>Configuración
+            <li class="nav-item dropdown mr-3">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fas fa-user"> </i> Bienvenido
                 </a>
-            </div>
+                <div class="dropdown-menu">
+                    <a routerLink="/configuracion" class="dropdown-item">
+                        <i class="fas fa-cog"></i>Configuración
+                    </a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
