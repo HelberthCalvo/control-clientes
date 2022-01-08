@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
-import{ AngularFireModule } from '@angular/fire/compat';
-import {AngularFirestoreModule, SETTINGS} from '@angular/fire/compat/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import {
+  AngularFirestoreModule,
+  SETTINGS,
+} from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +23,8 @@ import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.componen
 import { ClienteServicio } from './servicios/cliente.service';
 import { LoginService } from './servicios/login.service';
 import { AuthGuard } from './guardianes/auth.guard';
+import { ConfiguracionServicio } from './servicios/configuracion.service';
+import { ConfiguracionGuard } from './guardianes/configuracion.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,7 @@ import { AuthGuard } from './guardianes/auth.guard';
     RegistroComponent,
     ConfiguracionComponent,
     NoEncontradoComponent,
-    PiePaginaComponent
+    PiePaginaComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +46,16 @@ import { AuthGuard } from './guardianes/auth.guard';
     AngularFirestoreModule,
     AngularFireAuthModule,
     FormsModule,
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
   ],
-  providers: [ClienteServicio, LoginService, AuthGuard],
-  bootstrap: [AppComponent]
+  providers: [
+    ClienteServicio,
+    LoginService,
+    AuthGuard,
+    ConfiguracionServicio,
+    ConfiguracionGuard
+    /*, {provide: SETTINGS, useValue:{}}*/
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
